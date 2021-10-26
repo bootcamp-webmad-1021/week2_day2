@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+        <script>
+
+            // Global context (window)
+            const theWindow = this
+            console.log(theWindow)
+
+
+
+
+            // // Function context (window)
+            function whatever() {
+                console.log('El contexto en una función es:', this)
+            }
+
+            whatever()
+
+
+
+
+            // // Method context
+            const person = {
+                name: 'German',
+                weight: 88,
+                loseWeight() {
+                    this.weight -= .1
+                    console.log(`Ahora ${this.name} pesa ${this.weight}`)
+                },
+
+
+
+
+                walk1() {                               // Error! el contexto de una función es window 
+                    setInterval(function () {
+                        console.log(`Ahora ${this.name} pesa ${this.weight}`)
+                    }, 1000)
+                },
+
+                walk2() {                               // Error! Guarrería
+                    const that = this
+                    setInterval(function () {
+                        that.weight -= .1
+                        console.log(`Ahora ${that.name} pesa ${that.weight}`)
+                    }, 1000)
+                },
+
+                walk3() {                               // Bien! .bind() asocia el contexto del método al contexto de la función
+                    setInterval(function () {
+                        this.weight -= .1
+                        console.log(`Ahora ${this.name} pesa ${this.weight}`)
+                    }.bind(this), 1000)
+                },
+
+                walk4() {                               // Bien! Las funciones flecha no reorientan el contexto
+                    setInterval(() => {
+                        this.weight -= .1
+                        console.log(`Ahora ${this.name} pesa ${this.weight}`)
+                    }, 1000)
+                }
+            }
+
+
+            person.loseWeight()
+            // person.walk1()
+            // // person.walk2()
+            // // person.walk3()
+            person.walk4()
+
+
+        </script>
+
+    </body>
+
+</html>

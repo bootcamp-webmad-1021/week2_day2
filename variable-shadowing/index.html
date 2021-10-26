@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+        <script>
+
+            // Variable shadowing
+            let place = 'Estoy fuera de la función'
+
+            function whatever() {
+                const place = 'Estoy dentro de la función'
+                console.log('El valor en el contexto de función es ', place)
+            }
+
+            function otherFunction() {
+                const place = "Yo tengo otro scope diferente"
+                console.log(place)
+            }
+
+            whatever()
+            otherFunction()
+            // console.log('El valor en el contexto global es ', place)
+
+        </script>
+    </body>
+
+</html>

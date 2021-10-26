@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+
+        <script>
+
+            // Functions as values
+            function add(first, second, resultFn) {
+                resultFn(first + second)
+            }
+
+            function logValue(value) {
+                console.log("El valor recibido es: ", value)
+            }
+
+            add(2, 3, logValue)
+
+            function squareValue(num) {
+                console.log("The square is: " + num * num)
+            }
+
+            add(2, 3, squareValue)
+
+            // // // Functions in variables
+            // function add(first, second, callbackFunc) {
+            //     console.log(first + second)
+            //     callbackFunc()
+            //     function squareValue(num) {
+            //         console.log("The square is: " + num * num)
+            //     }
+            //     add(2, 3, squareValue)
+            // }
+
+            // var logDone = function () {
+            //     console.log("I'm done!")
+            // }
+
+            // // add(2, 3, logDone)
+
+
+            // // // Anonymous functions
+            // const ages = [3, 34, 5, 2, 5, 3]
+
+
+
+            // ages.forEach((elm) => console.log(elm))
+
+
+
+        </script>
+    </body>
+
+</html>

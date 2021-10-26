@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+
+        <script>
+
+            // REST parameters
+            function showMovieInfo(title, director, ...actors) {
+
+                console.log(title)
+                console.log(director)
+
+                // console.log(`La peli ${title} dirigida por ${director}`)
+
+                actors.forEach(elm => console.log(`Su nomnbre es ${elm}`))
+            }
+
+            showMovieInfo('Condemor', 'Chiquito', 'Kate', 'Leo', 'La señora del collar')
+
+
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+        <script>
+
+
+            class Person {
+
+                constructor(nameValue, lastNameValue, ageValue, jobValue, salaryValue, heightValue, hobbiesValue) {
+                    this.name = nameValue
+                    this.lastName = lastNameValue
+                    this.age = ageValue
+                    this.job = jobValue
+                    this.salary = salaryValue
+                    this.height = heightValue
+                    this.hobbies = hobbiesValue
+                    this.alive = true
+                }
+
+                grow() {
+                    this.age++
+                }
+
+                getJob() {
+                    this.job = true
+                }
+
+                newSalary(salary) {
+                    this.salary = salary
+                }
+
+                learn(newHobby) {
+                    this.hobbies.push(newHobby)
+                }
+
+            }
+
+
+            const ger = new Person('ger', 'alv', 22, 'teacher', 22, 189, ['sky', 'chess'])
+            const pepe = new Person('pepe', 'mrd', 22, 'teacher', 22, 189, ['sky', 'chess'])
+            console.log(ger)
+            console.log(pepe)
+
+            // // Extensión de una instancia
+            pepe.dance = function () { alert('A BAILAR!') }
+            pepe.dance()
+
+            // // Extensión del prototipo de Person
+            Person.prototype.moveThatAss = function () {
+                alert('A mover el pandero!')
+            }
+
+            // console.log(ger)
+            // console.log(pepe)
+
+
+
+            // console.log('------')
+
+
+            const drinks = new Array('beer', 'jagger', 'margaritas')
+            console.log(drinks)
+
+            Array.prototype.push = function (elm) {
+                this.pop(elm)
+            }
+
+            drinks.push()
+            console.log(drinks)
+
+
+        // // Extensión del prototipo de Array
+        // Array.prototype.logFirstItem = function () {
+        //     console.log('El primer item es', this[0])
+        // }
+
+        // drinks.logFirstItem()
+
+
+        </script>
+    </body>
+
+</html>

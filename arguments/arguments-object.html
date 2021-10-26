@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+
+
+        <script>
+
+
+            function showMovieActors() {
+
+                // El objeto arguments es un array-like object sin los métodos de los arrays
+                console.log('Estos son los argumentos:', arguments)
+
+
+                const realArray = [...arguments]    // <= creamos nuevo array con su contenido e iteramos
+
+                realArray.forEach(elm => console.log(`Su nombre es ${elm}`))
+            }
+
+
+            showMovieActors('Kate', 'Leo', 'La señora del collar', 'Vin Diesel', 'La roca')
+
+
+        </script>
+    </body>
+
+</html>

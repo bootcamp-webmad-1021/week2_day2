@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <script>
+
+            // sayHi()
+            // Function statement
+            function sayHi() {
+                console.log("hi")
+                // statements
+            }
+
+
+            whatever()
+            // Function expression
+            const whatever = function () {
+                console.log("holi")
+                // statements
+            }
+
+
+
+            // Function global object constructor
+            const test3 = new Function('a', 'b', 'return a+b')
+            console.log(test3(2, 4))
+
+
+            // Arrow function
+            const sayBye = () => console.log('Bye!')
+
+
+        </script>
+    </body>
+
+</html>
